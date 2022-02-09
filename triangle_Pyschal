@@ -1,0 +1,13 @@
+n = int(input())
+n += 1
+pasq = []
+for i in range(n):
+    row = [1] * (i+1)
+    for j in range(i+1):
+        if j != 0 and j != i:
+            row[j] = pasq[i-1][j-1] + pasq[i-1][j]
+    pasq.append(row)
+#print(pasq[n-1])
+
+for k in pasq:
+    print(*k)
